@@ -24,6 +24,7 @@ builder.Services
         var googleOptions = builder.Configuration
             .GetSection(GoogleOptions.Configuration)
             .Get<GoogleOptions>() ?? throw new InvalidProgramException("Google options configuration cannot be null");
+
         opt.ClientId = googleOptions.ClientId;
         opt.ClientSecret = googleOptions.ClientSecret;
         opt.SignInScheme = IdentityConstants.ExternalScheme;
